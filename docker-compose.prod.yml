@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    volumes:
+      - ./logs:/app/logs
+    environment:
+      IMMEDIATE: False
+    env_file:
+      - .env.production

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "vanuatu-alerts"
+version = "0.1.0"
+description = ""
+authors = ["Michael Toohig <=>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+schedule = "^1.2.1"
+requests = "^2.32.2"
+beautifulsoup4 = "^4.12.3"
+loguru = "^0.7.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

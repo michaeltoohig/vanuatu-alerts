@@ -7,4 +7,4 @@ services:
     volumes:
       - .:/app
     env_file:
-      - .env
+      - .env.development

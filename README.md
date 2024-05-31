@@ -9,5 +9,5 @@ Various APIs and web scrapers will gather data and fire off a message to a perso
 Create a local `.env` file and set appropriate values.
 
 ```sh
-cp .env.template .env
+cp .env.template .env.development
 ```

@@ -36,7 +36,7 @@ class EarthquakePlugin(BasePlugin):
             logger.debug("No earthquakes were found")
             return None
         for item in earthquakes:
-            logger.debug(f"Checking found earthquake {item.id}")
+            logger.debug(f"Found earthquake {item.id}")
             if item.id in self.known_earthquakes:
                 logger.debug("Skipping - known earthquake")
                 continue
@@ -44,6 +44,8 @@ class EarthquakePlugin(BasePlugin):
                 if self.felt_earthquake(item):
                     logger.info(f"Earthquake {item.id} was felt")
                     return f"Earthquake felt!\nMag {item.magnitude}\nNear {item.place}.\nRead more at {item.url}"
+                else:
+                    logger.debug("Skipping - earthquake not felt")
             except Exception as e:
                 raise e
             finally:

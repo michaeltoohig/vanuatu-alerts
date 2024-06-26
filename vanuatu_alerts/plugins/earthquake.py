@@ -79,12 +79,11 @@ class EarthquakePlugin(BasePlugin):
             longitude=config.COORDS_HOME[1],
             maxradiuskm=1000,
         )
-        resp = requests.get(url, params=params)
+        resp = requests.get(url, params=params, timeout=30)
+        resp.raise_for_status()
         return resp.json()
 
     def felt_earthquake(self, earthquake: Earthquake) -> bool:
-        # lat = earthquake.geometry.coordinates[0]
-        # lon = earthquake.geometry.coordinates[1]
         distance = self.haversine(
             config.COORDS_HOME[0],
             config.COORDS_HOME[1],

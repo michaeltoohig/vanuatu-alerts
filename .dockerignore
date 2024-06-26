@@ -3,6 +3,6 @@
 
 tests/
 
-.env
+.env.development
 .env.production
 .env.template
